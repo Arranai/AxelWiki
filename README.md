@@ -1,4 +1,4 @@
-In diesem Auftrag ging es darum eine VM mit einem Service automatisiert über Vagrant aufzusetzen.
+In diesem Auftrag ging es darum eine VM mit einem Service automatisiert über Vagrant aufzusetzen. 
 Als erstes nehmen wir das Vagrantfile auseinander.
 
 Im ersten Teil wird definiert was für ein Betriebssystem verwendet wird und wie die VM heissen soll, ebenfalls können gleich die IP und die Ports eingetragen werden, über welche man die VM nachher erreicht. Zudem gibt man noch an über welche VM Plattform dies laufen wird.
@@ -13,5 +13,13 @@ Vagrant.configure(2) do |config|
 	  vb.memory = "2048"  
 	end
 ```
-  
-Zunächst geht es weiter mit dem installieren des Services. Dies wird ganz herkömmlich mit dem ``` 
+Um jetzt den Service zu installieren ruft man direkt die Shell (Commando Zeile) im Vagrant auf und genau gleich wie in der Shell gibt man auch dort die Commands ein. Das öffnen der Shell funktioniert so:
+```ruby
+dhcp.vm.provision "shell", inline: <<-SHELL
+```
+Zunächst geht es weiter mit dem installieren des Services. Dies wird ganz herkömmlich mit dem ``` apt-get install``` Command. um jegliche Fragen zu überspringen gibt man noch ```-y```ein.
+```ruby
+sudo apt-get update
+sudo apt-get -y install isc-dhcp-server
+ 
+```
