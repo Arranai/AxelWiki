@@ -21,5 +21,17 @@ Zunächst geht es weiter mit dem installieren des Services. Dies wird ganz herk�
 ```ruby
 sudo apt-get update
 sudo apt-get -y install isc-dhcp-server
- 
 ```
+
+```ruby
+ sudo sed -i 's/example.org/labor.local/g' /etc/dhcp/dhcpd.conf
+ sudo sed -i 's/ns2.labor.local/8.8.8.8/g' /etc/dhcp/dhcpd.conf
+ sudo sed -i 's/#authoritative/authoritative/g' /etc/dhcp/dhcpd.conf
+ sudo sed -i '$asubnet 10.10.0.0 netmask 255.255.255.0 {' /etc/dhcp/dhcpd.conf 
+ sudo sed -i '$arange 10.10.0.50 10.10.0.90 {' /etc/dhcp/dhcpd.conf
+ sudo sed -i '$aoption routers 10.10.0.1;' /etc/dhcp/dhcpd.conf
+ sudo sed -i '$a}' /etc/dhcp/dhcpd.conf
+ sudo service isc-dhcp-server restart
+ sudo sed -i 's/XKBLAYOUT="us"/XKBLAYOUT="ch"/g' /etc/default/locale
+ ```
+ 
