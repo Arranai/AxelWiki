@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
 	dhcp.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
 	dhcp.vm.provider "virtualbox" do |vb|
 	  vb.memory = "2048"  
-	end
+  end
 ```
 Um jetzt den Service zu installieren ruft man direkt die Shell (Commando Zeile) im Vagrant auf und genau gleich wie in der Shell gibt man auch dort die Commands ein. Das öffnen der Shell funktioniert so:
 ```ruby
@@ -22,7 +22,7 @@ Zunächst geht es weiter mit dem installieren des Services. Dies wird ganz herk�
 sudo apt-get update
 sudo apt-get -y install isc-dhcp-server
 ```
-
+Die Konfiguration des services muss natürlich auch noch gemacht werden. 
 ```ruby
  sudo sed -i 's/example.org/labor.local/g' /etc/dhcp/dhcpd.conf
  sudo sed -i 's/ns2.labor.local/8.8.8.8/g' /etc/dhcp/dhcpd.conf
