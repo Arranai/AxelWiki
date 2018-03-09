@@ -24,27 +24,29 @@ sudo apt-get -y install isc-dhcp-server
 ```
 Die Konfiguration des services muss natürlich auch noch gemacht werden. Das DHCP Konfigfile wird hier im /etc/dhcp/ abgelegt mit dem Namen dhcpd.conf
 ```ruby
- sudo sed -i 's/example.org/labor.local/g' /etc/dhcp/dhcpd.conf
+sudo sed -i 's/example.org/labor.local/g' /etc/dhcp/dhcpd.conf
  ```
 In diesem File befindet sich der Domainname, der DHCP Scope, also die Range die vergeben werden darf und der DNS Server.
 Der Name der Domain lautet base.dom, zusätzlich wurde noch ein DNS Server angegeben, in diesem Fall der Standard von Google (8.8.8.8)
 ```ruby
- sudo sed -i 's/example.org/base.dom/g' /etc/dhcp/dhcpd.conf
- sudo sed -i 's/ns2.base.dom/8.8.8.8/g' /etc/dhcp/dhcpd.conf
+sudo sed -i 's/example.org/base.dom/g' /etc/dhcp/dhcpd.conf
+sudo sed -i 's/ns2.base.dom/8.8.8.8/g' /etc/dhcp/dhcpd.conf
  ```
 Das Netz ist ein 10.10.0.0/24 Netz, davon werden die Adressen von 10.10.0.10 - 10.10.0.100 verteilt, der Rest gilt als Reserve, kann    aber natürlich auch verwendet werden.
 ```ruby
 sudo sed -i '$asubnet 10.10.0.0 netmask 255.255.255.0 {' /etc/dhcp/dhcpd.conf  
 sudo sed -i '$arange 10.10.0.10 10.10.0.100 {' /etc/dhcp/dhcpd.conf
 ```
-Um mit Geräten im Netz kmmunizieren zu können braucht es einen Gateway Adresse, welche das nächste Gerät im Netz ist, in diesem Fall ein Router mit der Adresse 10.10.0.1
+Um mit Geräten im Netz kommunizieren zu können braucht es eine Gateway Adresse, welche auf das nächste Gerät im Netz verweist, in diesem Fall ein Router mit der Adresse 10.10.0.1
 ```ruby
 sudo sed -i '$aoption routers 10.10.0.1;' /etc/dhcp/dhcpd.conf
 ```
-Mit diesem Command wird die Konfiguration geschlossen und der Service wird neugestartet.
-  
- sudo sed -i '$a}' /etc/dhcp/dhcpd.conf
- sudo service isc-dhcp-server restart
- sudo sed -i 's/XKBLAYOUT="us"/XKBLAYOUT="ch"/g' /etc/default/locale
- ```
- 
+Danach wird die Konfiguration abgeschlossen und der Service wird neugestartet.
+```ruby  
+sudo sed -i '$a}' /etc/dhcp/dhcpd.conf
+sudo service isc-dhcp-server restart
+```
+Zum Schluss wird das Tastatur Layout der Maschiene noch auf Schweiz eingestellt.
+```ruby
+sudo sed -i 's/XKBLAYOUT="us"/XKBLAYOUT="ch"/g' /etc/default/locale
+```
