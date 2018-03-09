@@ -50,3 +50,8 @@ Zum Schluss wird das Tastatur Layout der Maschiene noch auf Schweiz eingestellt.
 ```ruby
 sudo sed -i 's/XKBLAYOUT="us"/XKBLAYOUT="ch"/g' /etc/default/locale
 ```
+<title>Aufsetzen der VM</title>
+Um das ganze aufzusetzen einfach in den richtigen Ordner gehen, indem das Vagrantfile abgelegt ist und dieses Kommando ausführen:
+```ruby
+vagrant up
+```
