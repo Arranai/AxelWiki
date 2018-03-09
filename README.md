@@ -32,7 +32,7 @@ Der Name der Domain lautet base.dom, zusätzlich wurde noch ein DNS Server angeg
 sudo sed -i 's/example.org/base.dom/g' /etc/dhcp/dhcpd.conf
 sudo sed -i 's/ns2.base.dom/8.8.8.8/g' /etc/dhcp/dhcpd.conf
  ```
-Das Netz ist ein 10.10.0.0/24 Netz, davon werden die Adressen von 10.10.0.10 - 10.10.0.100 verteilt, der Rest gilt als Reserve, kann    aber natürlich auch verwendet werden.
+Die IP konfig baut auf, auf einem 10.10.0.1/24 Netz, davon werden die Adressen im Bereich von 10.10.0.10 - 10.10.0.100 verteilt, der Rest gilt als Reserve, kann aber natürlich auch verwendet werden.
 ```ruby
 sudo sed -i '$asubnet 10.10.0.0 netmask 255.255.255.0 {' /etc/dhcp/dhcpd.conf  
 sudo sed -i '$arange 10.10.0.10 10.10.0.100 {' /etc/dhcp/dhcpd.conf
