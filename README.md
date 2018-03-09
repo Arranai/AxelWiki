@@ -10,8 +10,8 @@ Vagrant.configure(2) do |config|
     dhcp.vm.box = "ubuntu/trusty64"
     dhcp.vm.hostname = "dhcp"
     dhcp.vm.network "private_network", ip:"10.10.0.4" 
-	dhcp.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
-	dhcp.vm.provider "virtualbox" do |vb|
+    dhcp.vm.network "forwarded_port", guest:80, host:8080, auto_correct: true
+    dhcp.vm.provider "virtualbox" do |vb|
 	  vb.memory = "2048"  
   end
 ```
