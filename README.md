@@ -53,6 +53,13 @@ Zum Schluss wird das Tastatur Layout der Maschiene noch auf Schweiz eingestellt.
 ```ruby
 sudo sed -i 's/XKBLAYOUT="us"/XKBLAYOUT="ch"/g' /etc/default/locale
 ```
+## Firewall Service
+Den Service ladet man auch wieder mit dem ganz normal installations Befehl herunter, danach wird er gleich eingeschalten und der gewünschte Port wird freigegeben.
+```ruby
+sudo apt-get install ufw gufw 
+sudo ufw enable
+sudo ufw allow 22/tcp
+```
 ## Installieren der VM
 Um das ganze aufzusetzen einfach in den richtigen Ordner gehen, indem das Vagrantfile abgelegt ist und dieses Kommando ausführen:
 ```ruby
