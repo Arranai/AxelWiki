@@ -54,7 +54,7 @@ Zum Schluss wird das Tastatur Layout der Maschiene noch auf Schweiz eingestellt.
 sudo sed -i 's/XKBLAYOUT="us"/XKBLAYOUT="ch"/g' /etc/default/locale
 ```
 ## Firewall Service
-Den Service ladet man auch wieder mit dem ganz normal installations Befehl herunter, danach wird er gleich eingeschalten und der gewünschte Port wird freigegeben.
+Den Service ladet man auch wieder mit dem ganz normal installations Befehl herunter, danach wird er gleich aktiviert und der Port 22 wird aufgeschalten, damit Verbindungen mit SSH funktionieren.
 ```ruby
 sudo apt-get install ufw gufw 
 sudo ufw enable
