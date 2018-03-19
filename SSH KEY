@@ -1,8 +1,11 @@
 ## DHCP Maschine
-CLOUD_IMG: This file was created/modified by the Cloud Image build process  
+```
+# CLOUD_IMG: This file was created/modified by the Cloud Image build process
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3ZWeT/56Z4sOdWTbM3pTA3f3YLgvTXVzatbkvx8ydyKGPU2rv51zJRqtixoJPYusVRs+tJH9WyBuUm57xd9bdncUxVxyyqQINTHnUUhUfa6KuPOSOrZZbMZZ1YxhX7nwilBn4yJjws/q7OUdEZ07SV739ZkQVq/55dDGr9nxcNEbUnojCqkJsCL0l8dPbzhSjDXXBaXcMhXovJJwgR0nTbhXQ8J1uYxnV6k97dkdnRl1LBnRQaDz0o/K42EjFUaSKhTskV9AVzh6gZxz8Z87au2kuS17VEE216Ur1OG3iodYesnLlwLmSTjaIX9YFZrAaFevVrFNJJYnv4//jbv9F vagrant
-
+vagrant@dhcp:~/.ssh$ exit
+```
 ## Lokal 
+```
 -----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEA0iNzObFmf9+PcptuhufTGOzek0LBlhgXSXbUxuaxe0CUznWp
 oMI8GxNsf2RXEafdZjNdOk0Wv6OQZe/ntiZdmmuHOaysePmVm7WtcDvGZyuO7EQ+
@@ -30,3 +33,4 @@ KrLEFeyXRpmLCPEFjK0CTbie+6oNiMFvNhwyyMCfO6ybCcCRvSOlzXTtY+B/caHl
 15yeGW+qU+eWWFO7F/pPdgMUZXTc9QViO912ZoMu8NhzYgutQdoaOG9uFjyJBh5Q
 BCo/CAYC2JE5nNpoFv4kHew+f8mPNd3cPFruRcqchg4+834CnHVp
 -----END RSA PRIVATE KEY-----
+```
