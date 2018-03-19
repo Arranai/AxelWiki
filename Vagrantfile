@@ -21,6 +21,10 @@ Vagrant.configure(2) do |config|
 	sudo sed -i '$a}' /etc/dhcp/dhcpd.conf
 	sudo service isc-dhcp-server restart
 	sudo sed -i 's/XKBLAYOUT="us"/XKBLAYOUT="ch"/g' /etc/default/locale
+	
+	sudo apt-get install ufw gufw 
+	sudo ufw enable
+	sudo ufw allow 22/tcp
 SHELL
 	end  
  end
