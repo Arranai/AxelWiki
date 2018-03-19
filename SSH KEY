@@ -1,9 +1,20 @@
+Als erstes wurde auf die Maschine verbunden, ins .ssh verzeichnis gewechselt und der Key rausgeholt.
+```ruby
+vagrant@dhcp:~$ cd .ssh
+vagrant@dhcp:~/.ssh$ ls
+authorized_keys
+vagrant@dhcp:~/.ssh$ cat authorized_keys
+```
+Nach dem cat erhält man diesen Key:
 ## DHCP Maschine
 ```
 # CLOUD_IMG: This file was created/modified by the Cloud Image build process
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3ZWeT/56Z4sOdWTbM3pTA3f3YLgvTXVzatbkvx8ydyKGPU2rv51zJRqtixoJPYusVRs+tJH9WyBuUm57xd9bdncUxVxyyqQINTHnUUhUfa6KuPOSOrZZbMZZ1YxhX7nwilBn4yJjws/q7OUdEZ07SV739ZkQVq/55dDGr9nxcNEbUnojCqkJsCL0l8dPbzhSjDXXBaXcMhXovJJwgR0nTbhXQ8J1uYxnV6k97dkdnRl1LBnRQaDz0o/K42EjFUaSKhTskV9AVzh6gZxz8Z87au2kuS17VEE216Ur1OG3iodYesnLlwLmSTjaIX9YFZrAaFevVrFNJJYnv4//jbv9F vagrant
 vagrant@dhcp:~/.ssh$ exit
 ```
+Nachdem man diesen Key gefunden hat, braucht man noch einen auf dem lokalen Gerät. Dafür muss man zuerst in den Ordner wechseln, indem das .ssh File liegt.
+In meinem Fall war das im C/users/arranai/.ssh.
+Falls es dort noch keine Key hat, gibt man ```ssh-keygen``` ein und erstellt somit ganz einfach einen Key.
 ## Lokal 
 ```
 -----BEGIN RSA PRIVATE KEY-----
